@@ -4,6 +4,8 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios';
 
+axios.defaults.baseURL = "/api";
+axios.defaults.timeout = 8000;
 //拦截器，统一处理错误返回信息
 axios.interceptors.response.use(function (response) {
   let res = response.data;
