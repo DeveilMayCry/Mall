@@ -20,17 +20,17 @@ export default new Router({
             redirect: '/index',
             children: [
                 {
-                    path: '/index',
+                    path: 'index',
                     name: 'index',
                     component: Index,
                 },
                 {
-                    path: '/product/:id',
+                    path: 'product/:id',
                     name: 'product',
                     component: Product,
                 },
                 {
-                    path: '/detail/:id',
+                    path: 'detail/:id',
                     name: 'detail',
                     component: Detail,
                 }
@@ -42,22 +42,21 @@ export default new Router({
             component: Order,
             children: [
                 {
-                    path: '/list',
+                    path: 'list',
                     name: 'order-list',
                     component: OrderList,
                 },
                 {
-                    path: '/orderConfirm',
+                    path: 'orderConfirm',
                     name: 'order-confirm',
                     component: OrderConfirm,
                 },
                 {
-                    path: '/pay',
+                    path: 'pay',
                     name: 'order-pay',
                     component: OrderPay,
                 }
             ]
         }
-
     ]
 })

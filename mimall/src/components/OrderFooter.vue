@@ -1,12 +1,11 @@
 <template>
     <div>
-       
+        order-footer
     </div>
 </template>
 
 <script>
-
 export default {
-    name:'login',
+    name:"order-footer"
 }
 </script>
