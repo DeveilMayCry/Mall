@@ -31,7 +31,9 @@ export default {
     clear(key, moudle_name) {
         let val = this.getStorage();
         if (moudle_name) {
-            delete val[moudle_name];
+            if (val[moudle_name]) {
+                delete val[moudle_name];
+            }
         } else {
             delete val[key];
         }
