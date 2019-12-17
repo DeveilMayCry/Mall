@@ -1,21 +1,35 @@
 <template>
-    <div class="header">
-        <div class="navHeader">
-            <div class="headerLeft">
-                <a href="javascript:;">松果出行</a>
-                <a href="javascript:;">MIUI</a>
-                <a href="javascript:;">云服务</a>
-                <a href="javascript:;">协议规则</a>
-            </div>
-            <div class="headerRight">
-                <a href="javascript:;">登录</a>
-                <a href="javascript:;">注册</a>
-                <div class="cart">
-                    <div class="iconCart"></div>购物车
+    <div>
+        <div class="header">
+            <div class="navHeader">
+                <div class="headerLeft">
+                    <a href="javascript:;">松果出行</a>
+                    <a href="javascript:;">MIUI</a>
+                    <a href="javascript:;">云服务</a>
+                    <a href="javascript:;">协议规则</a>
+                </div>
+                <div class="headerRight">
+                    <a href="javascript:;">登录</a>
+                    <a href="javascript:;">注册</a>
+                    <div class="cart">
+                        <div class="iconCart"></div>购物车(0)
+                    </div>
                 </div>
             </div>
         </div>
         <div class="navBody">
+            <div class="logo">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="topMenu">
+                <div>小米手机</div>
+                <div>Redmi手机</div>
+                <div>电视</div>
+            </div>
+            <div class="search">
+                <input type="text">
+                <div></div>
+            </div>
         </div>
     </div>
 </template>
@@ -78,6 +92,87 @@
                     margin-left: 19px;
                 }
             }
+        }
+    }
+
+    .navBody {
+        width: 1226px;
+        height: 112px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            background-color: #FF6600;
+
+
+
+            a {
+                display: inline-block;
+                width: 110px;
+                height: 55px;
+
+                &:before {
+                    display: inline-block;
+                    content: ' ';
+                    width: 55px;
+                    height: 55px;
+                    background: url('./../../public/imgs/mi-logo.png') no-repeat center;
+                    background-size: 55px;
+                    transition: all .2s;
+                }
+
+                &:after {
+                    display: inline-block;
+                    content: ' ';
+                    width: 55px;
+                    height: 55px;
+                    background: url('./../../public/imgs/mi-home.png') no-repeat center;
+                    background-size: 55px;
+                }
+
+                &:hover:before {
+                    margin-left: -55px;
+                    transition: all .2s;
+                }
+
+            }
+
+        }
+
+        .topMenu {
+            display: flex;
+            font-size: 16px;
+            margin-left: 209px;
+            font-weight: bold;
+            color: #333333;
+
+            div {
+                margin-right: 20px;
+            }
+        }
+
+        .search {
+            display: flex;
+            margin-left: auto;
+
+            input {
+                width: 264px;
+                height: 50px;
+                border: 1px solid #E0E0E0;
+                padding-left: 10px;
+            }
+
+            div {
+                width: 55px;
+                height: 50px;
+                background: url('./../../public/imgs/icon-search.png') no-repeat center;
+                border: 1px solid #E0E0E0;
+                border-left: none;
+            }
+
         }
     }
 </style>
