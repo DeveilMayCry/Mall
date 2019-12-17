@@ -12,14 +12,12 @@ import OrderPay from './pages/orderPay'
 Vue.use(Router);
 
 export default new Router({
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'home',
             component: Home,
             redirect: '/index',
-            children: [
-                {
+            children: [{
                     path: 'index',
                     name: 'index',
                     component: Index,
@@ -40,8 +38,7 @@ export default new Router({
             path: '/order',
             name: 'order',
             component: Order,
-            children: [
-                {
+            children: [{
                     path: 'list',
                     name: 'order-list',
                     component: OrderList,

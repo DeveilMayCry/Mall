@@ -19,7 +19,7 @@ axios.interceptors.response.use(function (response) {
   }
 });
 
-Vue.Vue(VueAxios, axios);
+Vue.use(VueAxios, axios);
 Vue.config.productionTip = true
 Vue.config.devtools = true
 
