@@ -22,7 +22,61 @@
                 <a href="javascript:;"></a>
             </div>
             <div class="topMenu">
-                <div>小米手机</div>
+                <div class="popDiv">小米手机
+                    <div class="children">
+                        <div class="menuItem">
+                            <div class="productImg">
+                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                            </div>
+                            <div class="productName">小米9</div>
+                            <div class="productPrice">2999元</div>
+                        </div>
+                        <div class="hrVertical"></div>
+                        <div class="menuItem">
+                            <div class="productImg">
+                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                            </div>
+                            <div class="productName">小米9</div>
+                            <div class="productPrice">2999元</div>
+                        </div>
+                        <div class="hrVertical"></div>
+
+                        <div class="menuItem">
+                            <div class="productImg">
+                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                            </div>
+                            <div class="productName">小米9</div>
+                            <div class="productPrice">2999元</div>
+                        </div>
+                        <div class="hrVertical"></div>
+
+                        <div class="menuItem">
+                            <div class="productImg">
+                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                            </div>
+                            <div class="productName">小米9</div>
+                            <div class="productPrice">2999元</div>
+                        </div>
+                        <div class="hrVertical"></div>
+
+                        <div class="menuItem">
+                            <div class="productImg">
+                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                            </div>
+                            <div class="productName">小米9</div>
+                            <div class="productPrice">2999元</div>
+                        </div>
+                        <div class="hrVertical"></div>
+
+                        <div class="menuItem">
+                            <div class="productImg">
+                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                            </div>
+                            <div class="productName">小米9</div>
+                            <div class="productPrice">2999元</div>
+                        </div>
+                    </div>
+                </div>
                 <div>Redmi手机</div>
                 <div>电视</div>
             </div>
@@ -101,6 +155,7 @@
         margin: 0 auto;
         display: flex;
         align-items: center;
+        position: relative;
 
         .logo {
             width: 55px;
@@ -149,9 +204,82 @@
             font-weight: bold;
             color: #333333;
 
-            div {
+
+
+            &>div {
                 margin-right: 20px;
             }
+
+            .popDiv {
+
+                &:hover {
+                    .children {
+                        height: 194px;
+                        opacity: 1;
+                        transition: all .5s;
+
+                    }
+                }
+
+                .children {
+
+                    width: 1226px;
+                    height: 194px;
+                    height: 0px;
+                    opacity: 0;
+                    position: absolute;
+                    margin: 0 auto;
+                    top: 112px;
+                    left: 0px;
+                    border: none;
+                    border-top: 1px solid #E5E5E5;
+                    padding-top: 26px;
+                    box-shadow: 0px 7px 6px 0px #000000;
+                    font-size: 12px;
+                    line-height: 12px;
+                    font-weight: bold;
+                    overflow: hidden;
+                    transition: all .5s;
+                    display: flex;
+
+                    .menuItem {
+                        width: 204px;
+
+                        .productImg {
+                            width: 92px;
+                            height: 111px;
+                            margin: 0 auto;
+
+                            img {
+                                width: 92px;
+                                height: 111px;
+                            }
+                        }
+
+                        .productName {
+                            text-align: center;
+                            margin-top: 19px;
+                        }
+
+                        .productPrice {
+                            text-align: center;
+                            margin-top: 8px;
+                            color: #FF6600;
+                        }
+
+
+                    }
+
+                    .hrVertical {
+                        width: 1px;
+                        height: 99px;
+                        border: none;
+                        border-left: 1px solid #D7D7D7;
+                        margin-top: 3px;
+                    }
+                }
+            }
+
         }
 
         .search {
