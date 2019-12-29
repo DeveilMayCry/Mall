@@ -24,56 +24,15 @@
             <div class="topMenu">
                 <div class="popDiv">小米手机
                     <div class="children">
-                        <div class="menuItem">
-                            <div class="productImg">
-                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
+                        <div class="menuItemContainer" v-for="(item,index) of phoneList" :key="index">
+                            <div class="menuItem">
+                                <div class="productImg">
+                                    <img :src="item.mainImage" alt="">
+                                </div>
+                                <div class="productName">{{item.name}}</div>
+                                <div class="productPrice">{{item.price}}元</div>
                             </div>
-                            <div class="productName">小米9</div>
-                            <div class="productPrice">2999元</div>
-                        </div>
-                        <div class="hrVertical"></div>
-                        <div class="menuItem">
-                            <div class="productImg">
-                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
-                            </div>
-                            <div class="productName">小米9</div>
-                            <div class="productPrice">2999元</div>
-                        </div>
-                        <div class="hrVertical"></div>
-
-                        <div class="menuItem">
-                            <div class="productImg">
-                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
-                            </div>
-                            <div class="productName">小米9</div>
-                            <div class="productPrice">2999元</div>
-                        </div>
-                        <div class="hrVertical"></div>
-
-                        <div class="menuItem">
-                            <div class="productImg">
-                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
-                            </div>
-                            <div class="productName">小米9</div>
-                            <div class="productPrice">2999元</div>
-                        </div>
-                        <div class="hrVertical"></div>
-
-                        <div class="menuItem">
-                            <div class="productImg">
-                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
-                            </div>
-                            <div class="productName">小米9</div>
-                            <div class="productPrice">2999元</div>
-                        </div>
-                        <div class="hrVertical"></div>
-
-                        <div class="menuItem">
-                            <div class="productImg">
-                                <img src="./../../public/imgs/nav-img/nav4-1.png" alt="">
-                            </div>
-                            <div class="productName">小米9</div>
-                            <div class="productPrice">2999元</div>
+                            <div v-if="index !== phoneList.length-1" class="hrVertical"></div>
                         </div>
                     </div>
                 </div>
@@ -264,41 +223,45 @@
                     transition: all .5s;
                     display: flex;
 
-                    .menuItem {
-                        width: 204px;
+                    .menuItemContainer {
+                        display: flex;
 
-                        .productImg {
-                            width: 92px;
-                            height: 111px;
-                            margin: 0 auto;
+                        .menuItem {
+                            width: 203px;
+                            text-align: center;
 
-                            img {
-                                width: 92px;
+                            .productImg {
                                 height: 111px;
+                                margin: 0 auto;
+
+                                img {
+                                    height: 111px;
+                                }
                             }
+
+                            .productName {
+                                text-align: center;
+                                margin-top: 19px;
+                            }
+
+                            .productPrice {
+                                text-align: center;
+                                margin-top: 8px;
+                                color: #FF6600;
+                            }
+
+
                         }
 
-                        .productName {
-                            text-align: center;
-                            margin-top: 19px;
+                        .hrVertical {
+                            width: 1px;
+                            height: 99px;
+                            border: none;
+                            border-left: 1px solid #D7D7D7;
+                            margin-top: 3px;
                         }
-
-                        .productPrice {
-                            text-align: center;
-                            margin-top: 8px;
-                            color: #FF6600;
-                        }
-
-
                     }
 
-                    .hrVertical {
-                        width: 1px;
-                        height: 99px;
-                        border: none;
-                        border-left: 1px solid #D7D7D7;
-                        margin-top: 3px;
-                    }
                 }
             }
 
