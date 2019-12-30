@@ -74,7 +74,7 @@
         },
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .header {
         width: 100%;
         background-color: #333;
