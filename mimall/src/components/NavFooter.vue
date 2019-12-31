@@ -22,8 +22,6 @@
         font-size: 16px;
         color: #999999;
         padding-top: 46px;
-        position: fixed;
-        bottom: 0px;
         border-top: 4px solid #FF7301;
 
         .logo {

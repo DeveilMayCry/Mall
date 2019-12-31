@@ -202,7 +202,7 @@
                 }
 
                 .children {
-
+                    background-color: #FFFFFF;
                     width: 1226px;
                     height: 194px;
                     height: 0px;
