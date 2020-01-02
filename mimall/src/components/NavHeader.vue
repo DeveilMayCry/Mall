@@ -197,7 +197,7 @@
                         height: 194px;
                         opacity: 1;
                         transition: all .5s;
-
+                        z-index: 3;
                     }
                 }
 
