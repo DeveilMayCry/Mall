@@ -5,6 +5,14 @@
                 <div class="menuItem">
                     <div>手机 电话卡</div>
                     <div class="arrow"></div>
+                    <div class="children">
+                        <div class="row" v-for="(item,i) in productList" :key="i">
+                            <div class="column" v-for="(value,j) in item" :key="j">
+                                <img :src="value?value.img:require('../../public/imgs/item-box-1.png')" alt="">
+                                <div>{{value?value.name:'小米3'}}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="menuItem">
                     <div>电视 盒子</div>
@@ -99,7 +107,34 @@
                 }, {
                     id: '46',
                     img: require('../../public/imgs/slider/slide-5.jpg')
-                }]
+                }],
+                productList: [
+                    [{
+                            id: 30,
+                            name: "小米cc9",
+                            img: require('../../public/imgs/item-box-1.png')
+                        },
+                        {
+                            id: 31,
+                            name: "小米8青春版",
+                            img: require('../../public/imgs/item-box-2.png')
+                        }, {
+                            id: 32,
+                            name: "Redmi k20 Pro",
+                            img: require('../../public/imgs/item-box-3.jpg')
+                        }, {
+                            id: 33,
+                            name: "移动4G专区",
+                            img: require('../../public/imgs/item-box-4.jpg')
+                        },
+
+                    ],
+                    [0, 0, 0, 0],
+                    [0, 0, 0, 0],
+                    [0, 0, 0, 0],
+                    [0, 0, 0, 0],
+                    [0, 0, 0, 0],
+                ]
             }
         }
     }
@@ -131,11 +166,54 @@
                 align-items: center;
                 justify-content: space-between;
 
+                .children {
+                    display: none;
+                }
+
+                &:hover {
+                    .children {
+                        display: block;
+                    }
+                }
+
                 .arrow {
                     width: 10px;
                     height: 15px;
                     background: url('../../public/imgs/icon-arrow.png') no-repeat center;
                     background-size: contain;
+                }
+
+                .children {
+                    position: absolute;
+                    left: 264px;
+                    top: 0;
+                    width: 964px;
+                    height: 451px;
+                    background-color: #FFFFFF;
+
+                    .row {
+                        display: flex;
+                        height: 75px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .column {
+                            flex: 1;
+                            padding-left: 23px;
+                            display: flex;
+                            align-items: center;
+                            font-size: 14px;
+                            font-family: FZLanTingHeiS-R-GB;
+                            font-weight: bold;
+                            color: #333333;
+
+                            img {
+                                width: 35px;
+                                height: 42px;
+                                margin-right: 15px;
+                            }
+                        }
+                    }
                 }
             }
         }
