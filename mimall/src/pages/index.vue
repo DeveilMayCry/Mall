@@ -61,7 +61,37 @@
                     <img src="../../public/imgs/banner-1.png" alt="">
                 </a>
             </div>
-
+        </div>
+        <div class="phone">
+            <div class="wrapper">
+                <div class="catalog">手机</div>
+                <div class="phoneContainer">
+                    <div class="left">
+                        <a href="">
+                            <img src="../../public/imgs/xmad_1561118283559_PdAOq.png" alt="">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <div class="rightItem" v-for="(item,index) in phoneList" :key="index">
+                            <div class="type" :class="{'bgRed':index%2==0}">
+                                新品
+                            </div>
+                            <div class="imgContainer">
+                                <img :src="item.mainImage" alt="">
+                            </div>
+                            <div class="title">
+                                {{item.name}}
+                            </div>
+                            <div class="subTitle">
+                                {{item.subtitle}}
+                            </div>
+                            <div class="price">
+                                {{item.price}}元
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <service-bar>
         </service-bar>
@@ -158,9 +188,23 @@
                 }, {
                     id: 47,
                     img: require('../../public/imgs/ads/ads-4.jpg')
-                }]
+                }],
+                phoneList: []
             }
-        }
+        },
+        mounted() {
+            this.init();
+        },
+        methods: {
+            init() {
+                this.axios.get('/products', {
+                    params: {
+                        categoryId: 100012,
+                        pageSize: 8
+                    }
+                }).then((res) => this.phoneList = res.list);
+            }
+        },
     }
 </script>
 <style lang="scss" scoped>
@@ -279,6 +323,115 @@
         .banner {
             img {
                 width: 100%;
+            }
+        }
+
+    }
+
+    .phone {
+        background-color: #F5F5F5;
+
+        .wrapper {
+            width: 1226px;
+            margin: 0 auto;
+            padding-top: 30px;
+            padding-bottom: 50px;
+
+            .catalog {
+                font-size: 22px;
+                font-family: FZLanTingHeiS-R-GB;
+                font-weight: bold;
+                color: #333333;
+                margin-bottom: 20px;
+                margin-left: 0;
+                margin-right: auto;
+            }
+
+            .phoneContainer {
+                height: 619px;
+                display: flex;
+
+                .left {
+                    img {
+                        width: 224px;
+                        height: 100%;
+                    }
+
+                    margin-right:16px;
+                }
+
+                .right {
+                    flex: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-content: space-between;
+
+                    .rightItem {
+                        width: 236px;
+                        height: 302px;
+                        background-color: #FFF;
+
+                        .type {
+                            width: 67px;
+                            height: 24px;
+                            line-height: 24px;
+                            margin: 0 auto;
+                            background-color: #7ECF68;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: #FFFFFF;
+                            text-align: center;
+                        }
+
+                        .type.bgRed {
+                            background-color: #E82626;
+                        }
+
+                        .type.bgGreen {
+                            background-color: #7ECF68;
+                        }
+
+                        .imgContainer {
+                            height: 195px;
+                            text-align: center;
+                            padding: 5px 0;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .title {
+                            font-size: 14px;
+                            line-height: 14px;
+                            font-weight: bold;
+                            color: #333333;
+                            text-align: center;
+                        }
+
+                        .subTitle {
+                            margin-top: 6px;
+                            font-size: 12px;
+                            line-height: 12px;
+                            font-weight: bold;
+                            color: #999999;
+                            text-align: center;
+                        }
+
+                        .price {
+                            margin-top: 13px;
+                            font-size: 14px;
+                            line-height: 14px;
+                            font-weight: bold;
+                            color: #F20A0A;
+                            text-align: center;
+
+                        }
+                    }
+
+                }
             }
         }
 
