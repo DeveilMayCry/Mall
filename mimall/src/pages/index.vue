@@ -51,6 +51,17 @@
                 <div class="swiper-button-prev" slot="button-prev"></div>
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
+            <div class="adsContainer">
+                <a :href="'/#/product/'+item.id" v-for="(item,index) of adsList" :key="index">
+                    <img class="ads" :src="item.img">
+                </a>
+            </div>
+            <div class="banner">
+                <a href="/#/product/30">
+                    <img src="../../public/imgs/banner-1.png" alt="">
+                </a>
+            </div>
+
         </div>
         <service-bar>
         </service-bar>
@@ -134,7 +145,20 @@
                     [0, 0, 0, 0],
                     [0, 0, 0, 0],
                     [0, 0, 0, 0],
-                ]
+                ],
+                adsList: [{
+                    id: 33,
+                    img: require('../../public/imgs/ads/ads-1.png')
+                }, {
+                    id: 48,
+                    img: require('../../public/imgs/ads/ads-2.jpg')
+                }, {
+                    id: 45,
+                    img: require('../../public/imgs/ads/ads-3.png')
+                }, {
+                    id: 47,
+                    img: require('../../public/imgs/ads/ads-4.jpg')
+                }]
             }
         }
     }
@@ -184,12 +208,14 @@
                 }
 
                 .children {
+                    border: 1px solid #e0e0e0;
                     position: absolute;
                     left: 264px;
                     top: 0;
                     width: 964px;
                     height: 451px;
                     background-color: #FFFFFF;
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, .18);
 
                     .row {
                         display: flex;
@@ -228,6 +254,31 @@
 
             .swiper-button-prev {
                 left: 274px;
+            }
+        }
+
+        .adsContainer {
+            height: 167px;
+            padding-top: 14px;
+            padding-bottom: 31px;
+
+            a:nth-last-child(1) {
+                img {
+                    margin-right: 0px;
+                }
+            }
+
+            img {
+                height: 167px;
+                width: 296px;
+                margin-right: 14px;
+
+            }
+        }
+
+        .banner {
+            img {
+                width: 100%;
             }
         }
 
