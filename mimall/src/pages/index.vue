@@ -87,9 +87,19 @@
                             </div>
                             <div class="price">
                                 {{item.price}}元
+                                <a href="javascript:;" @click="BuyNow()">
+                                    <img src="../../public/imgs/icon-cart-hover.png" alt="">
+                                </a>
                             </div>
                         </div>
                     </div>
+                    <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :center="true" :lock-scroll="false"
+                        :close-on-click-modal="false">
+                        <span>这是一段信息</span>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button type="success" @click="dialogVisible = false" class="detailBtn">查看详情</el-button>
+                        </span>
+                    </el-dialog>
                 </div>
             </div>
         </div>
@@ -189,7 +199,8 @@
                     id: 47,
                     img: require('../../public/imgs/ads/ads-4.jpg')
                 }],
-                phoneList: []
+                phoneList: [],
+                dialogVisible: false
             }
         },
         mounted() {
@@ -200,9 +211,12 @@
                 this.axios.get('/products', {
                     params: {
                         categoryId: 100012,
-                        pageSize: 8
+                        pageSize: 14
                     }
-                }).then((res) => this.phoneList = res.list);
+                }).then((res) => this.phoneList = res.list.slice(6, 14));
+            },
+            BuyNow() {
+                this.dialogVisible = true;
             }
         },
     }
@@ -395,7 +409,6 @@
                         .imgContainer {
                             height: 195px;
                             text-align: center;
-                            padding: 5px 0;
 
                             img {
                                 width: 100%;
@@ -428,12 +441,20 @@
                             color: #F20A0A;
                             text-align: center;
 
+                            img {
+                                width: 18px;
+                                height: 14px;
+                            }
+
                         }
                     }
 
                 }
             }
-        }
 
+            .dialogTitle {
+                text-align: left;
+            }
+        }
     }
 </style>

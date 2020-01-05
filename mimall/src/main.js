@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 //import baseURL from './env.js'
 
 axios.defaults.baseURL = '/api';
@@ -19,6 +21,7 @@ axios.interceptors.response.use(function (response) {
   }
 });
 
+Vue.use(ElementUI);
 Vue.use(VueAxios, axios);
 Vue.config.productionTip = true
 Vue.config.devtools = true
