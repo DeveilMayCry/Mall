@@ -8,6 +8,7 @@ import Order from './pages/order'
 import OrderList from './pages/orderList'
 import OrderConfirm from './pages/orderConfirm'
 import OrderPay from './pages/orderPay'
+import Login from './pages/login'
 
 Vue.use(Router);
 
@@ -31,7 +32,8 @@ export default new Router({
                     path: 'detail/:id',
                     name: 'detail',
                     component: Detail,
-                }
+                },
+
             ]
         },
         {
@@ -54,6 +56,10 @@ export default new Router({
                     component: OrderPay,
                 }
             ]
+        }, {
+            path: '/login',
+            name: 'login',
+            component: Login,
         }
     ]
 })

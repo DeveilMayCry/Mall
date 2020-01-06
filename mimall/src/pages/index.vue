@@ -95,9 +95,9 @@
                     </div>
                     <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :center="true" :lock-scroll="false"
                         :close-on-click-modal="false">
-                        <span>这是一段信息</span>
+                        <span>商品添加成功！</span>
                         <span slot="footer" class="dialog-footer">
-                            <el-button type="success" @click="dialogVisible = false" class="detailBtn">查看详情</el-button>
+                            <el-button type="success" @click="dialogVisible = false" class="detailBtn">查看购物车</el-button>
                         </span>
                     </el-dialog>
                 </div>
