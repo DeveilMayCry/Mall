@@ -13,16 +13,16 @@
                         <div>扫码登录</div>
                     </div>
                     <div class="inputs">
-                        <input class="account" type="text" placeholder="邮箱/手机号码/小米ID">
-                        <input class="password" type="text" placeholder="密码">
+                        <input class="account" type="text" placeholder="邮箱/手机号码/小米ID" v-model="username">
+                        <input class="password" type="password" placeholder="密码" v-model="password">
                     </div>
-                    <div class="loginBtn">
+                    <div class="loginBtn" @click="loginHandler">
                         登录
                     </div>
                     <div class="regist">
                         <div class="phoneRegist">手机短信登录/注册</div>
                         <div class="registAndForget">
-                            <span>立即注册</span>
+                            <span @click="registHandler">立即注册</span>
                             |
                             <span>忘记密码？</span>
                         </div>
@@ -38,6 +38,42 @@
 <script>
     export default {
         name: 'login',
+        data() {
+            return {
+                username: "",
+                password: ""
+            }
+        },
+        methods: {
+            loginHandler() {
+                let {
+                    username,
+                    password
+                } = this;
+                this.axios.post('/user/login', {
+                    username,
+                    password
+                }).then((res) => {
+                    this.$cookie.set('userId', res.id, {
+                        expires: '1M'
+                    })
+                    this.$router.push('/index')
+                });
+            },
+            registHandler() {
+                let {
+                    username,
+                    password
+                } = this;
+                this.axios.post('/user/register', {
+                    username,
+                    password,
+                    email: '506587246@qq.com'
+                }).then(() => {
+                    alert('注册成功')
+                });
+            }
+        },
     }
 </script>
 <style lang="scss" scoped>
