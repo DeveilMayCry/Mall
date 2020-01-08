@@ -6,6 +6,7 @@ import VueAxios from 'vue-axios';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueCookie from 'vue-cookie';
+import store from './store'
 //import baseURL from './env.js'
 
 axios.defaults.baseURL = '/api';
@@ -30,6 +31,7 @@ Vue.config.devtools = true
 
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

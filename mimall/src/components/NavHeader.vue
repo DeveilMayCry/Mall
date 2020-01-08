@@ -9,8 +9,9 @@
                     <a href="javascript:;">协议规则</a>
                 </div>
                 <div class="headerRight">
-                    <a href="/#/login">登录</a>
-                    <a href="javascript:;">注册</a>
+                    <a href="/#/login" v-if="username==''">登录</a>
+                    <a href="/#/login" v-if="username==''">注册</a>
+                    <a href="javascript:;" v-if="username!=''">{{username}}</a>
                     <div class="cart">
                         <div class="iconCart"></div>购物车(0)
                     </div>
@@ -52,8 +53,12 @@
         name: "nav-header",
         data() {
             return {
-                userName: 'jack',
                 phoneList: []
+            }
+        },
+        computed: {
+            username() {
+                return this.$store.state.username
             }
         },
         mounted() {

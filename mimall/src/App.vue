@@ -5,12 +5,22 @@
 </template>
 
 <script>
-  import storage from './storage'
   export default {
     name: 'app',
     components: {},
     mounted() {
-      storage.getItem('a', 1);
+      this.getUserInfo();
+      this.getCartCount();
+    },
+    methods: {
+      getUserInfo() {
+        this.axios.get('/user').then((res) => {
+          this.$store.dispatch('saveUserName', res.username)
+        });
+      },
+      getCartCount() {
+        this.axios.get('/carts/products/sum').then(() => {});
+      }
     },
   }
 </script>
