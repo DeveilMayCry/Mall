@@ -1,11 +1,13 @@
 <template>
-    <div class="container" :class='{"isFixed":isFixed}'>
-        <div class="params">
-            <div class="left">小米8 透明探索版</div>
-            <div class="right">
-                <a href="javascript:;">概述</a>|
-                <a href="javascript:;">参数</a>|
-                <a href="javascript:;">用户评价</a>
+    <div class="bar" :class='{"isFixed":isFixed}'>
+        <div class="container">
+            <div class="params">
+                <div class="left">小米8 透明探索版</div>
+                <div class="right">
+                    <a href="javascript:;">概述</a>|
+                    <a href="javascript:;">参数</a>|
+                    <a href="javascript:;">用户评价</a>
+                </div>
             </div>
         </div>
     </div>
@@ -21,6 +23,9 @@
         mounted() {
             window.addEventListener('scroll', this.InitHeight);
         },
+        destroyed() {
+            window.removeEventListener('scroll', this.InitHeight, false);
+        },
         methods: {
             InitHeight() {
                 let height = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
@@ -30,45 +35,49 @@
     }
 </script>
 <style lang="scss" scoped>
-    .container {
-        width: 1226px;
-        margin: 0 auto;
-        border-top: 1px solid #E5E5E5;
+    .bar {
+        width: 100%;
         background-color: #FFFFFF;
 
         &.isFixed {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
         }
 
-        .params {
-            height: 70px;
-            display: flex;
-            justify-content: space-between;
-            padding-top: 26px;
-            box-sizing: border-box;
+        .container {
+            width: 1226px;
+            margin: 0 auto;
+            border-top: 1px solid #E5E5E5;
 
 
 
-            .left {
-                font-size: 18px;
-                line-height: 18px;
-                font-weight: bold;
-                color: #333333;
-            }
+            .params {
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                padding-top: 26px;
+                box-sizing: border-box;
 
-            .right {
-                a {
-                    font-size: 14px;
-                    line-height: 14px;
+
+
+                .left {
+                    font-size: 18px;
+                    line-height: 18px;
                     font-weight: bold;
-                    color: #666666;
-                    margin: 0 10px;
+                    color: #333333;
+                }
 
-                    &:nth-last-child(1) {
-                        margin-right: 0;
+                .right {
+                    a {
+                        font-size: 14px;
+                        line-height: 14px;
+                        font-weight: bold;
+                        color: #666666;
+                        margin: 0 10px;
+
+                        &:nth-last-child(1) {
+                            margin-right: 0;
+                        }
                     }
                 }
             }
