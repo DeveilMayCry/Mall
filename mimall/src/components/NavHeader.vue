@@ -13,7 +13,7 @@
                     <a href="/#/login" v-if="username==''">注册</a>
                     <a href="javascript:;" v-if="username!=''">{{username}}</a>
                     <div class="cart">
-                        <div class="iconCart"></div>购物车(0)
+                        <div class="iconCart"></div>购物车({{cartCount}})
                     </div>
                 </div>
             </div>
@@ -59,6 +59,9 @@
         computed: {
             username() {
                 return this.$store.state.username
+            },
+            cartCount() {
+                return this.$store.state.cartCount
             }
         },
         mounted() {

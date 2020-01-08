@@ -19,7 +19,10 @@
         });
       },
       getCartCount() {
-        this.axios.get('/carts/products/sum').then(() => {});
+        this.axios.get('/carts/products/sum').then((res) => {
+          this.$store.dispatch('saveCartCount', res)
+
+        });
       }
     },
   }
