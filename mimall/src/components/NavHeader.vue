@@ -20,7 +20,7 @@
         </div>
         <div class="navBody">
             <div class="logo">
-                <a href="javascript:;"></a>
+                <a href="/#/index"></a>
             </div>
             <div class="topMenu">
                 <div class="popDiv">小米手机

@@ -43,13 +43,14 @@
             小米8 AI变焦双摄拍摄
         </div>
         <div class="bg4">
-            <div class="videoBg" @click='showSlide=true'></div>
+            <div class="videoBg" @click='showSlide=showVideo=true'></div>
         </div>
         <div class="video-box">
             <div class="overlay" v-if='showSlide'></div>
             <div class="video" :class="{'slide':showSlide}">
-                <span class="icon-close" @click='showSlide=false'></span>
-                <video src="../../public/imgs/product/video.mp4" muted autoplay controls='controls'></video>
+                <span class="icon-close" @click='close()'></span>
+                <video v-if="showVideo" src="../../public/imgs/product/video.mp4" muted autoplay
+                    controls='controls'></video>
             </div>
         </div>
     </div>
@@ -102,7 +103,17 @@
                         img: require('../../public/imgs/product/gallery-6.jpg')
                     },
                 ],
-                showSlide: false
+                showSlide: false,
+                showVideo: false
+            }
+
+        },
+        methods: {
+            close() {
+                this.showSlide = false;
+                setTimeout(() => {
+                    this.showVideo = false;
+                }, 600)
             }
         },
     }

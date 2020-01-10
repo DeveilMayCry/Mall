@@ -303,15 +303,12 @@
         }
 
         .swiper-container {
-            height: 451px;
+            width: 642px;
+            height: 617px;
 
             img {
-                height: 451px;
                 width: 100%;
-            }
-
-            .swiper-button-prev {
-                left: 274px;
+                height: 100%;
             }
         }
 
