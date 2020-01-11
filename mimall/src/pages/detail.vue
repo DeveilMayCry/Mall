@@ -19,6 +19,19 @@
                     相机全新升级 / 960帧超慢动作 / 手持超级夜景 / 全球首款双频GPS / 骁龙845处理器 / 红
                     外人脸解锁 / AI变焦双摄 / 三星 AMOLED 屏
                 </div>
+                <div class="seller">小米自营</div>
+                <div class="prices">
+                    <span class="current">2599元</span>
+                    <span class="older">2999元</span>
+                </div>
+                <div class="line"></div>
+                <div class="address">
+                    <div class="iconAddress"></div>
+                    <div class="addressDetail">
+                        <span>北京 北京市 朝阳区 安定门街道</span><span>修改</span>
+                        <div class="hasStock">有现货</div>
+                    </div>
+                </div>
             </div>
         </div>
         <service-bar></service-bar>
@@ -109,6 +122,76 @@
                 font-size: 14px;
                 font-weight: bold;
                 color: #999999;
+            }
+
+            .seller {
+                margin-top: 26px;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: bold;
+                color: #FF6700;
+            }
+
+            .current {
+                font-size: 20px;
+                line-height: 20px;
+                font-weight: bold;
+                color: #FF6700;
+                display: inline-block;
+                margin-top: 14px;
+                margin-right: 10px;
+            }
+
+            .older {
+                display: inline-block;
+                text-decoration: line-through;
+                font-size: 14px;
+                font-weight: bold;
+                color: #999999;
+            }
+
+            .line {
+                border: 1px solid #E5E5E5;
+                margin: 25px 0 28px 0;
+            }
+
+            .address {
+                height: 108px;
+                display: flex;
+                background-color: #E5E5E5;
+                padding: 27px 0 0 34px;
+                box-sizing: border-box;
+                border: 1px solid #E5E5E5;
+
+                .iconAddress {
+                    width: 20px;
+                    height: 22px;
+                    background: url('../../public/imgs/icon-loc.png') no-repeat;
+                    background-size: 20px 22px;
+                    margin-right: 10px;
+                }
+
+                .addressDetail {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #666666;
+
+                    span {
+                        margin-right: 20px;
+
+                        &:nth-child(2) {
+                            color: #FF6700;
+                        }
+                    }
+
+                    .hasStock {
+                        margin-top: 20px;
+                        height: 14px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #FF6700;
+                    }
+                }
             }
         }
     }
