@@ -32,6 +32,31 @@
                         <div class="hasStock">有现货</div>
                     </div>
                 </div>
+                <div class="title3">选择版本</div>
+                <div class="wraper">
+                    <div class="versionPrice">6GB+64GB 全网通 1099元</div>
+                    <div class="versionPrice">4GB+64GB 移动4G 1049元</div>
+                </div>
+                <div class="title3">选择颜色</div>
+                <div class="wraper">
+                    <div class="color">深空灰</div>
+                </div>
+                <div class="checkContainer">
+                    <div class="description">
+                        <span>小米8 6GB+64GB 全网通 深灰色</span>
+                        <div>
+                            <span>1099元</span>
+                            <span>1699元</span>
+                        </div>
+                    </div>
+                    <div class="totalPrice">总计：1099元</div>
+                </div>
+                <div class="buttons">
+                    <div class="cart">加入购物车</div>
+                    <div class="like">
+                        <div>喜欢</div>
+                    </div>
+                </div>
             </div>
         </div>
         <service-bar></service-bar>
@@ -190,6 +215,118 @@
                         font-size: 14px;
                         font-weight: bold;
                         color: #FF6700;
+                    }
+                }
+            }
+
+            .title3 {
+                font-size: 18px;
+                line-height: 18px;
+                font-weight: bold;
+                color: #333333;
+                margin-top: 30px;
+            }
+
+            .wraper {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+
+                .versionPrice,
+                .color {
+                    width: 297px;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #666666;
+                    border: 1px solid #E5E5E5;
+                }
+
+                .color {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:before {
+                        content: ' ';
+                        display: inline-block;
+                        width: 14px;
+                        height: 16px;
+                        background-color: #666666;
+                        margin-right: 9px;
+                    }
+                }
+
+
+            }
+
+            .checkContainer {
+                height: 108px;
+                background-color: #FAFAFA;
+                margin-top: 50px;
+                padding: 20px 30px;
+                box-sizing: border-box;
+
+                .description {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #333333;
+
+                    div {
+                        span:nth-child(2) {
+                            margin-left: 9px;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+
+                .totalPrice {
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #FF6600;
+                    margin-top: 18px;
+                }
+            }
+
+            .buttons {
+                margin-top: 30px;
+                display: flex;
+                text-align: center;
+
+                .cart {
+                    width: 300px;
+                    height: 54px;
+                    line-height: 54px;
+                    background-color: #FF6600;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #FFFFFF;
+
+                }
+
+                .like {
+                    margin-left: 21px;
+                    width: 142px;
+                    height: 54px;
+                    line-height: 54px;
+                    background-color: #BBBBBB;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #FFFFFF;
+                    text-align: center;
+
+                    div:before {
+                        content: ' ';
+                        display: inline-block;
+                        width: 18px;
+                        height: 16px;
+                        background: url('../../public/imgs/love.png') no-repeat center;
+                        margin-right: 17px;
+                        vertical-align: middle
                     }
                 }
             }
