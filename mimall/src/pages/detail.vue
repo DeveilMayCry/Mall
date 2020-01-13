@@ -34,12 +34,16 @@
                 </div>
                 <div class="title3">选择版本</div>
                 <div class="wraper">
-                    <div class="versionPrice">6GB+64GB 全网通 1099元</div>
-                    <div class="versionPrice">4GB+64GB 移动4G 1049元</div>
+                    <div class="versionPrice" @click='version=1' :class="{'selected':version==1}">6GB+64GB 全网通
+                        1099元
+                    </div>
+                    <div class="versionPrice" @click='version=2' :class="{'selected':version==2}">4GB+64GB 移动4G
+                        1049元
+                    </div>
                 </div>
                 <div class="title3">选择颜色</div>
                 <div class="wraper">
-                    <div class="color">深空灰</div>
+                    <div class="color selected">深空灰</div>
                 </div>
                 <div class="checkContainer">
                     <div class="description">
@@ -105,6 +109,7 @@
                         img: require('../../public/imgs/detail/phone-4.jpg')
                     }
                 ],
+                version: 1
             }
         },
     }
@@ -242,6 +247,12 @@
                     font-weight: bold;
                     color: #666666;
                     border: 1px solid #E5E5E5;
+
+                    &.selected {
+                        border: 1px solid #FF6600;
+                        color: #FF6700;
+                    }
+
                 }
 
                 .color {
@@ -330,6 +341,8 @@
                     }
                 }
             }
+
+
         }
     }
 </style>
