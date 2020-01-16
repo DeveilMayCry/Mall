@@ -9,6 +9,8 @@ import OrderList from './pages/orderList'
 import OrderConfirm from './pages/orderConfirm'
 import OrderPay from './pages/orderPay'
 import Login from './pages/login'
+import Cart from './pages/cart'
+
 
 Vue.use(Router);
 
@@ -60,6 +62,11 @@ export default new Router({
             path: '/login',
             name: 'login',
             component: Login,
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            component: Cart,
         }
     ]
 })
